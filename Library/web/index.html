@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>図書管理アプリ</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="loading.css">
+    <link rel="icon" href="icon.jpeg">
+    <!-- <script src="sweetalert2/dist/sweetalert2.all.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+    <button type="button" id="buckbutton" onclick="buck()">Buck</button>
+    <div id="loading_page">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-text">loading</div>
+        </div>
+        <a href="mailto:n.s.fukuoka.cp.book@gmail.com" title="domsammut.com"
+            id="link">読み込みが終わらない場合はメールアドレスに連絡してください<br>n.s.fukuoka.cp.book@gmail.com</a>
+    </div>
+
+    <form class="search-form-005" id="form_text_input">
+        <label>
+            <input type="text" id="nones">
+            <input type="text" placeholder="キーワードを入力" id="form_text">
+        </label>
+        <button type="button" id="search_rub" class="formbutton" onclick="search_start()"></button>
+    </form>
+    <h3 id="label-text"></h3>
+    <h4 id="label-text2"></h4>
+    <table border="1" bordercolor="#9b9cf5" class="search_result" id="search_table">
+        <div id="Background"></div>
+        <tr>
+            <th id="title">タイトル</th>
+            <th id="author">著者</th>
+            <th id="rental_status">ステータス</th>
+            <th id="page">ページ</th>
+            <th id="headline">見出し文</th>
+            <th id="thumbnail">画像</th>
+        </tr>
+    </table>
+
+    <div class="rental" id="rental_form_div">
+        <button type="button" id="buckbutton" onclick="buck()">Buck</button>
+        <form id="rental_form">
+            <p id="label_text_p">「10..」から始まる8桁のバーコードを入力してください</p>
+            <p id="label_text_p">正しい値だった場合は、フォームの内容が登録されます</p>
+            <input type="text" id="nones1">
+            <input id="management_code" name="management" maxlength="8" pattern="^[0-9]+$" type="text"
+                onkeyup="CheckLength()">
+        </form>
+        <a href="#" class="btn" id="rental_start_button" onclick="rental_start_button()">貸出スタート</a>
+        <table id="rental_table">
+            <tr>
+                <th id="rental_title">タイトル</th>
+                <th id="rental_management">管理コード</th>
+            </tr>
+        </table>
+    </div>
+<!-- ! -->
+    <!-- <div class="rental" id="rental_end_form_div">
+        <button type="button" id="buckbutton" onclick="buck()">Buck</button>
+        <form id="rental_end_form">
+            <p id="label_text_p">「10..」から始まる8桁のバーコードを入力してください</p>
+            <p id="label_text_p">正しい値だった場合は、フォームの内容が登録されます</p>
+            <input id="end_management_code" name="end_management" maxlength="8" pattern="^[0-9]+$" type="text"
+                onkeyup="CheckLength()">
+        </form>
+        <a href="#" class="btn" id="rental_start_button" onclick="rental_end_button()">返却スタート</a>
+        <table id="rental_end_table">
+            <tr>
+                <th id="rental_title">タイトル</th>
+                <th id="rental_management">管理コード</th>
+            </tr>
+        </table>
+    </div> -->
+<!-- ! -->
+
+
+
+
+    <div class="menue-buttons" id="menues">
+        <div class="index-menue_icon">
+            <img src="account.svg" id="account_index">
+            <img src="search.svg" id="search_index" onclick="book_search()">
+            <a onclick="search_start_button()" class="menue-button" id="menues_a"><span>貸出</span></a>
+            <a onclick="search_end_start_button()"class="menue-button" id="menues_a"><span>返却</span></a>
+            <a class="menue-button" id="menues_a"><span>新本登録</span></a>
+            <a onclick="keyword_update()" class="menue-button" id="menues_a"><span>検索更新</span></a>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</body>
+
+</html>

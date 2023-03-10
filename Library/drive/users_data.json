@@ -1,0 +1,8 @@
+{
+    "users":[{
+        "id":1001,
+        "name":"TaikiMaruyama",
+        "password":"282c21e8f2ff9cc44125e7bd8701a525b0da6c3c799c1079707363e98e4ebb7b",
+        "power":"Admin"
+    }]
+}
